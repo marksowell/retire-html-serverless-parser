@@ -1,8 +1,7 @@
 # Retire HTML Serverless Parser
-The Retire HTML Serverless Parser consists of a client-side script and a serverless cloud function. The tool is designed to parse HTML output from Retire.js. Utilizing the client-side script to send the HTML file to the serverless function, serverless component fetches vulnerability data for the identified JavaScript libraries. The consolidated results are then presented to the user in a clear and comprehensive format through the client-side script.
+The Retire HTML Serverless Parser consists of a client-side script and a serverless cloud function. The tool is designed to parse HTML output from [Retire.js](https://github.com/RetireJS/retire.js). Utilizing the client-side script to send the HTML file to the serverless function, serverless component fetches vulnerability data for the identified JavaScript libraries. The consolidated results are then presented to the user in a clear and comprehensive format through the client-side script.
 
-## Usage
-### Requirements
+## Requirements
 - Python 3.6 or higher
 - `requests` library in Python
 
@@ -11,7 +10,7 @@ If the `requests` library is not installed, install with pip:
 pip install requests
 ```
 
-### Setting Up Your Client Script
+## Setting Up Your Client Script
 Before you can utilize the Retire HTML Serverless Parser client script, you need to configure it to communicate with your deployed serverless cloud function. Here's how you do it:
 
 1. Open the client script using your preferred text editor.
@@ -32,11 +31,18 @@ Before you can utilize the Retire HTML Serverless Parser client script, you need
 After making the necessary modifications, save the file and exit the editor.
 
 ## Usage
+The client script takes a single command-line argument, which is the path to the HTML file containing the Retire.js scan results. It will then display the parsed information about the vulnerable JavaScript libraries with details obtained from the serverless function.
 
-```bash
-python retire_html_serverless_parser.py <path-to-html-file>
-```
-Replace `<path-to-html-file>` with the path to your HTML file.
+1. Clone or download this repository to your local machine.
+2. Open a terminal or command prompt and navigate to the directory where you saved the script.
+3. Save the report:
+![Save report](images/save_report.png)
+4. Run the script using the following command:
+
+    ```bash
+    python retire_html_serverless_parser.py <path-to-html-file>
+    ```
+    Replace `<path-to-html-file>` with the path to your HTML file.
 
 The script will print vulnerability information for each library found in the HTML file. For each library, it will print:
 
