@@ -17,15 +17,12 @@ Before you can utilize the Retire HTML Serverless Parser client script, you need
 1. Insert the Cloud Function URL. Search for the line:
 
     ```python
-    url = "<INSERT_YOUR_CLOUD_FUNCTION_URL_HERE>"
+    url = "<CLOUD_FUNCTION_URL>"
     ```
-    Replace `<INSERT_YOUR_CLOUD_FUNCTION_URL_HERE>` with your actual serverless cloud     function URL. For example:
+    Replace `<CLOUD_FUNCTION_URL>` with your actual serverless cloud function URL.
+1. Insert the API key. The cloud function is protected with an API key. When making a request to the cloud function the API key is sent in the headers. Replace `<YOUR_API_KEY>` with your actual API key.
     ```python
-    url = "https://us-central1-your_project_id.cloudfunctions.net/your_function_endpoint"
-    ```
-1. Insert the API key. The cloud function is protected with an API key. When making a request to the cloud function the API key is sent in the headers. Replace `'your-api-key'` with your actual API key.
-    ```python
-    headers = {'X-API-KEY': 'your-api-key'}
+    headers = {'X-API-KEY': '<YOUR_API_KEY>'}
     ```
 4. Save and Close:
 After making the necessary modifications, save the file and exit the editor.
